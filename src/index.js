@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 mongoose.connect(process.env.uri, () => {
   console.log("Connected to DB");
 });
-const Ourprojects = require("./src/router/OurProjects");
+const Ourprojects = require("./router/OurProjects");
 app.use("/", Ourprojects);
 
 app.listen(port, () => {
