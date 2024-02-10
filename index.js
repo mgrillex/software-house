@@ -8,7 +8,9 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 app.use(bodyParser.json());
 
-mongoose.connect(process.env.uri);
+mongoose.connect(process.env.uri, () => {
+  console.log("Connected to DB");
+});
 const Ourprojects = require("./src/router/OurProjects");
 app.use("/", Ourprojects);
 
